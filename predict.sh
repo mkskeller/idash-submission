@@ -5,8 +5,8 @@ if ! test "$1"; then
     exit 1
 fi
 
-params=`./predict_data.py $* || exit 1`
 prog=idash_predict
+opts="-m old"
 
 . `dirname $0`/common.sh
 

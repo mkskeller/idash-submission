@@ -1,4 +1,6 @@
 
+params=`./data.py $* || exit 1`
+
 cd src
 ./Scripts/setup-ssl.sh || exit 1
 
@@ -8,4 +10,4 @@ if ! test -e Programs/Schedules/$name.sch; then
     ./compile.py -D -R 64 $prog $params || exit 1
 fi
 
-./Scripts/ring.sh $name -m old || exit 1
+./Scripts/ring.sh $name $opts || exit 1

@@ -2,7 +2,7 @@
 
 import sys, re
 
-files = [open(x) for x in sys.argv[1:2]]
+files = [open(x) for x in sys.argv[1:]]
 
 output = open('src/Player-Data/Input-P0-0', 'w')
 
@@ -22,7 +22,7 @@ for lines in zip(*files):
     if n_examples is None:
         n_examples = [len(x) for x in values]
     for x in values:
-        output.write(' '.join(x))
+        output.write(re.sub('null', '0', ' '.join(x)))
     output.write('\n')
 
-print n_examples[0], i
+print ' '.join(str(x) for x in n_examples), i
