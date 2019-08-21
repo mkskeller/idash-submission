@@ -21,8 +21,12 @@ for lines in zip(*files):
     values = [re.split(delim, line.strip())[1:] for line in lines]
     if n_examples is None:
         n_examples = [len(x) for x in values]
+    else:
+        assert n_examples == [len(x) for x in values]
     for x in values:
-        output.write(re.sub('null', '0', ' '.join(x)))
+        for y in x:
+            output.write(re.sub('null', '0', y))
+            output.write(' ')
     output.write('\n')
 
 print ' '.join(str(x) for x in n_examples), i
