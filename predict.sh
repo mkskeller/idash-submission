@@ -6,9 +6,7 @@ if ! test "$1"; then
 fi
 
 params=`./predict_data.py $* || exit 1`
+prog=idash_predict
 
-cd src
-./Scripts/setup-ssl.sh || exit 1
-./compile.py -D -R 64 idash_predict $params || exit 1
+. `dirname $0`/common.sh
 
-./Scripts/ring.sh idash_predict-`echo $params | sed 's/ /-/g'` -m old || exit 1

@@ -6,9 +6,6 @@ if ! test "$2"; then
 fi
 
 params=`./train_data.py $* || exit 1`
+prog=idash_train
 
-cd src
-./Scripts/setup-ssl.sh || exit 1
-./compile.py -D -R 64 idash_train $params || exit 1
-
-./Scripts/ring.sh idash_train-`echo $params | sed 's/ /-/g'` || exit 1
+. `dirname $0`/common.sh
