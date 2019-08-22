@@ -9,7 +9,7 @@ for i in *.sh *.py *.md src; do
     docker cp $i $id:$dir
 done
 
-docker exec $id rm -R $path/src/.git
+docker exec $id rm -R $path/src/.git $path/src/Player-Data $path/src/Programs/{Bytecode,Schedules}
 
 docker cp src/static/replicated-ring-party.x $id:$path/src
 
