@@ -26,6 +26,6 @@ where `<data>` contains the input data in the same format as above.
 
 This will also run a secure computation and output the result as
 
-```prediction: <result>```
+```predictions: <result>```
 
 where `<result>` is a string of 0s and 1s.
