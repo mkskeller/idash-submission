@@ -14,6 +14,6 @@ docker exec $id rm -R $path/src/.git $path/src/Player-Data $path/src/Programs/{B
 docker cp src/static/replicated-ring-party.x $id:$path/src
 
 docker exec $id apt update
-docker exec $id apt install python openssl
+docker exec $id apt -y install python openssl
 
 docker save -o idash-mp-spdz.tar `docker commit $id`
