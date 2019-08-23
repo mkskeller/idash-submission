@@ -1,3 +1,6 @@
+The model is a linear regression, that is, a dense layer followed by
+sigmoid.
+
 #### Training
 
 Run
@@ -14,7 +17,8 @@ yet. Then it runs three virtual machines (`replicated-ring-party.x`)
 that execute the actual computation between them.
 
 For simplicity, the data is all input via the first party (through
-`src/Player-Data/Input-P0-0`).
+`src/Player-Data/Input-P0-0`), after which all computation is entirely
+secret.
 
 #### Prediction
 
