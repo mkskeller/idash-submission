@@ -10,7 +10,7 @@ done
 . `dirname $0`/common-setup.sh
 
 for host in $host0 $host1 $host2; do
-    rsync -av Player-Data Programs $host:`pwd`
+    rsync -avR Player-Data/*.{pem,key,0} Programs $host:`pwd`
 done
 
 i=0
