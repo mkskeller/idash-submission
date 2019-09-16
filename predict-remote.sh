@@ -8,4 +8,4 @@ fi
 prog=idash_predict
 opts="-m old"
 
-. $root/common-remote.sh
+. ./common-remote.sh

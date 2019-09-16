@@ -7,4 +7,4 @@ fi
 
 prog=idash_train
 
-. $root/common-remote.sh
+. ./common-remote.sh
