@@ -1,5 +1,9 @@
 
+mkdir src/Player-Data
+
 params=`./data.py $* || exit 1`
+
+root=`pwd`
 
 cd src
 ./Scripts/setup-ssl.sh || exit 1
