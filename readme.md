@@ -1,6 +1,8 @@
 The model is a linear regression, that is, a dense layer followed by
 sigmoid.
 
+### Local executution
+
 #### Training
 
 Run
@@ -24,9 +26,10 @@ secret.
 
 Run
 
-```./train.sh <data>```
+```./predict.sh <data>```
 
 where `<data>` contains the input data in the same format as above.
+This will only work after running the training as above.
 
 This will also run a secure computation and output the result as
 
