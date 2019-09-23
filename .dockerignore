@@ -1,0 +1,7 @@
+src/.git
+src/Player-Data
+src/Programs/Bytecode
+src/Programs/Schedules
+src/*.a
+src/*/*.o
+idash-mp-spdz.tar

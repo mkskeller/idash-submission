@@ -14,7 +14,8 @@ ADD .bashrc .
 WORKDIR /usr/mp-spdz
 ADD src/ src/
 ADD src/static/replicated-ring-party.x src/
-RUN rm -R ./src/.git ./src/Player-Data ./src/Programs/Bytecode ./src/Programs/Schedules
 
 ADD *train.txt ./
 ADD *.sh *.py *.md ./
+
+RUN echo Port 2222 >> /etc/ssh/sshd_config
