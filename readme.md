@@ -43,7 +43,7 @@ where `<result>` is a string of 0s and 1s.
 
 Run
 
-```docker run -it -p 2222:2222 5000-5005:5000-5005 idash```
+```docker run -it -p 2222:2222 5000-5003:5000-5003 idash```
 
 on every host. This should ensure that all necessary ports are
 forwarded correctly and that that the SSH server is started (via
