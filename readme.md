@@ -43,25 +43,27 @@ where `<result>` is a string of 0s and 1s.
 
 Run
 
-```docker run -it -p 2222:2222 5000-5003:5000-5003 idash```
+```docker run -it -p <ssh port>:2222 <vm port>:<vm port> mp-idash```
 
 on every host. This should ensure that all necessary ports are
 forwarded correctly and that that the SSH server is started (via
 `.bashrc`). Add `-d` to the options to run without active TTY (for
-example via SSH).
+example via SSH). Note that <ssh port> and <vm port> have to the same
+and available on all hosts.
 
 #### Training
 
-Run
+On <host0>, run
 
-```./train-remote.sh <host0> <host1> <host2> <negative> <positive>```
+```./train-remote.sh <host0> <host1> <host2> <vm port> <ssh port> <negative> <positive>```
 
 where `<negative>` and `<positive>` are text files containing the
 data, either split by comma or by tab. Furthermore, both files are
 expected to have a title row and column.
 
-The script requires that all hosts run an SSH server on port 2222
-and that the ports 5000-5003 are open.
+The script requires that all hosts run an SSH server on <ssh port> and
+that <vm port> is open. If running with docker the ports have to the
+same as above.
 
 The script will prepare an optimized program for the virtual machines
 depending on the size of the data if such a program isn't present
@@ -78,7 +80,7 @@ secret.
 
 Run
 
-```./predict-remote.sh <host0> <host1> <host2> <data>```
+```./predict-remote.sh <host0> <host1> <host2> <vm port> <ssh port> <data>```
 
 where `<data>` contains the input data in the same format as above.
 This will only work after running the training with `train-remote.sh`,
