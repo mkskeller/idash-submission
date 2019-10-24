@@ -5,3 +5,6 @@ src/Programs/Schedules
 src/*.a
 src/*/*.o
 idash-mp-spdz.tar
+src/[^r]*-party.x
+src/*[^g]-party.x
+src/bin

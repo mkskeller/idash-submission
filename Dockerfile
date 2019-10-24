@@ -13,7 +13,6 @@ ADD .bashrc .
 
 WORKDIR /usr/mp-spdz
 ADD src/ src/
-ADD src/static/replicated-ring-party.x src/
 
 ADD *train.txt ./
 ADD *.sh *.py *.md ./

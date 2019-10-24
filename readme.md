@@ -1,5 +1,17 @@
-The model is a linear regression, that is, a dense layer followed by
-sigmoid.
+This repository contains the scripts for our submission to track 4 of
+iDASH 2019. See [our note](https://eprint/eprint.org/2019/xxx) for
+details.
+
+### Building the docker container
+
+Dockerfile expects MP-SPDZ in the `src` directory as well as
+`replicated-ring-party.x` being compiled in said directory. You can
+either clone MP-SPDZ into `src` or fetch the compiled version from
+GitHub:
+``` ./get-mp-spdz.sh ```
+
+Then build the container using
+``` docker build . ```
 
 ### Local executution
 
