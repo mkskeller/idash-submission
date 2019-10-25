@@ -8,9 +8,11 @@ Dockerfile expects MP-SPDZ in the `src` directory as well as
 `replicated-ring-party.x` being compiled in said directory. You can
 either clone MP-SPDZ into `src` or fetch the compiled version from
 GitHub:
+
 ``` ./get-mp-spdz.sh ```
 
 Then build the container using
+
 ``` docker build . ```
 
 ### Local executution
