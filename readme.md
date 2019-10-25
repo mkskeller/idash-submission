@@ -105,3 +105,28 @@ This will run a secure computation as for training and output the result as
 ```predictions: <result>```
 
 where `<result>` is a string of 0s and 1s.
+
+### Computing the accuracy
+
+We have used `regression.mpc` as provided with MP-SPDZ 0.1.2 for our
+figures. You can compile it as follows in the root directory of
+MP-SPDZ:
+
+```./compile.py -DR 64 regression <n_epochs> <n_threads> [opts]```
+
+where `<n_epochs>` stands of the number of epochs and `<n_threads>`
+stands for the number of threads being used. Further options are:
+- `bc` for the BC-TCGA dataset (default is GSE2034)
+- `nearest` for nearest rounding (default is probabilistic truncation)
+- `tol=<x>` to stop when the loss is below `x` (default is fixed
+number of epochs)
+
+`regression.mpc` processes inputs differently than the above
+programs. It expects first the labels for all examples, then every
+feature for all examples, all through player 0. In other words,
+`Player-Data/Input-P0-0` should contain a whitespace-separated table
+where first row is for labels and the further rows are the features.
+
+Note that the program computes a non-standard aggreated accuracy
+measure, but you can compute any accuracy measure using the two `a/b`
+outputs on lines starting with `test_acc:` (negative first).
