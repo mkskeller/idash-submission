@@ -1,5 +1,5 @@
 This repository contains the scripts for our submission to track 4 of
-iDASH 2019. See [our note](https://eprint/eprint.org/2019/xxx) for
+iDASH 2019. See [our note](https://eprint/eprint.org/2019/1246) for
 details.
 
 ### Building the docker container
